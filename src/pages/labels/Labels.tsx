@@ -31,7 +31,7 @@ export const LabelsWrapper = (props: LabelsProps) => {
 	const { label, values } = props;
 
 	return (
-		<div className="labels row row-auto row-wrap">
+		<div className="labels row row-auto row-wrap row-justify-content-center">
 			{values.map((value, index) => (
 				<LabelsRow label={label ?? ''} value={value} key={`${value}-${index}`} />
 			))}

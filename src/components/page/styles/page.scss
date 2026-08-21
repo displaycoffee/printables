@@ -12,7 +12,7 @@
 	}
 	.page {
 		@include mixins.sizing(8.5in, 11in);
-		margin: 0 auto;
+		margin: 0 auto theme.$spacing-x4 auto;
 		padding: 1in; /* your desired content safety margin */
 		background-color: theme.$color-01;
 		position: relative;
@@ -30,6 +30,9 @@
 		}
 	}
 	@media print {
+		.page {
+			margin-bottom: 0;
+		}
 		.navigation {
 			display: none;
 		}
