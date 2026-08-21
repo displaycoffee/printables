@@ -1,5 +1,5 @@
 {
-	"name": "burmecia",
+	"name": "labels",
 	"version": "3.9.5",
 	"description": "Custom react template build.",
 	"main": "bundle.js",
@@ -7,7 +7,7 @@
 	"keywords": [],
 	"author": "displaycoffee",
 	"license": "ISC",
-	"homepage": "https://burmecia.display.coffee",
+	"homepage": "https://labels.display.coffee",
 	"scripts": {
 		"build": "vite build && node optimize-html.js && npx prettier --write dist/index.html --ignore-path /dev/null",
 		"dev": "vite --host",
@@ -43,10 +43,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/displaycoffee/burmecia.git"
+		"url": "git+https://github.com/displaycoffee/labels.git"
 	},
 	"bugs": {
-		"url": "https://github.com/displaycoffee/burmecia/issues"
+		"url": "https://github.com/displaycoffee/labels/issues"
 	},
 	"browserslist": [
 		"last 2 versions"

@@ -1,7 +1,6 @@
 /* Type definitions */
 type ContextValues = {
 	theme: ThemeType;
-	utils: UtilsType;
 	variables: VariablesType;
 };
 
