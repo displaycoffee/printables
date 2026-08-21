@@ -1,13 +1,13 @@
 {
-	"name": "labels",
-	"version": "3.9.5",
+	"name": "mtg-collection",
+	"version": "1.0.0",
 	"description": "Custom react template build.",
 	"main": "bundle.js",
 	"type": "module",
 	"keywords": [],
 	"author": "displaycoffee",
 	"license": "ISC",
-	"homepage": "https://labels.display.coffee",
+	"homepage": "https://display.coffee",
 	"scripts": {
 		"build": "vite build && node optimize-html.js && npx prettier --write dist/index.html --ignore-path /dev/null",
 		"dev": "vite --host",
@@ -43,10 +43,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/displaycoffee/labels.git"
+		"url": "git+https://github.com/displaycoffee/mtg-collection.git"
 	},
 	"bugs": {
-		"url": "https://github.com/displaycoffee/labels/issues"
+		"url": "https://github.com/displaycoffee/mtg-collection/issues"
 	},
 	"browserslist": [
 		"last 2 versions"

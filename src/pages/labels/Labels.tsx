@@ -3,8 +3,31 @@ import './styles/labels.scss';
 
 /* Scripts */
 import { LabelsProps, LabelsRowProps } from './scripts/labels-types';
+import { alphabet } from './scripts/alphabet';
 
-export const Labels = (props: LabelsProps) => {
+/* Components */
+import { Page } from '../../components/page/Page';
+
+export const Labels = () => {
+	return (
+		<>
+			<Page>
+				<LabelsWrapper label={'Art Series'} values={alphabet} />
+				<LabelsWrapper label={'Art Series'} values={alphabet} />
+			</Page>
+			<Page>
+				<LabelsWrapper label={'Art Series'} values={alphabet} />
+				<LabelsWrapper label={'Art Series'} values={alphabet} />
+			</Page>
+			<Page>
+				<LabelsWrapper label={'Art Series'} values={alphabet} />
+				<LabelsWrapper label={'Art Series'} values={alphabet} />
+			</Page>
+		</>
+	);
+};
+
+export const LabelsWrapper = (props: LabelsProps) => {
 	const { label, values } = props;
 
 	return (
