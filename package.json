@@ -1,7 +1,7 @@
 {
-	"name": "mtg-collection",
+	"name": "printables",
 	"version": "1.0.0",
-	"description": "Custom react template build.",
+	"description": "A template to make labels, top loaders, etc. for print.",
 	"main": "bundle.js",
 	"type": "module",
 	"keywords": [],
@@ -43,10 +43,10 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/displaycoffee/mtg-collection.git"
+		"url": "git+https://github.com/displaycoffee/printables.git"
 	},
 	"bugs": {
-		"url": "https://github.com/displaycoffee/mtg-collection/issues"
+		"url": "https://github.com/displaycoffee/printables/issues"
 	},
 	"browserslist": [
 		"last 2 versions"

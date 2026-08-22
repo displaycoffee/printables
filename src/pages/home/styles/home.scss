@@ -3,12 +3,9 @@
 @use '../../../_config/styles/utils/_mixins';
 @use '../../../_config/styles/theme/_theme';
 
-//// TOP LOADERS
+//// HOME
 //// --------------------------------------------------------------------------
-
-	// Configuration
-
-	$labels-spacing: theme.$spacing-x2;
 
 	// Style block
 
+	.page-home {}

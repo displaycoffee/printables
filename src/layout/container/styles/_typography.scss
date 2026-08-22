@@ -70,6 +70,7 @@
 			font-style: theme.$font-style,
 			text-transform: theme.$font-transform
 		));
+		letter-spacing: 1px;
 		color: theme.$color-04;
 		a {
 			color: inherit;

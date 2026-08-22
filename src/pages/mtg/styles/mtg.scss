@@ -1,0 +1,75 @@
+// Use utils and theme variables
+@use '../../../_config/styles/utils/_functions';
+@use '../../../_config/styles/utils/_mixins';
+@use '../../../_config/styles/theme/_theme';
+
+//// LABELS
+//// --------------------------------------------------------------------------
+
+	// Configuration
+
+	$labels-spacing: theme.$spacing-x2;
+
+	// Style block
+
+	.mtg-labels {
+		.mtg-label {
+			width: 2in;
+			padding: calc($labels-spacing / 2) $labels-spacing;
+			border: 1px solid theme.$color-07;
+			margin: -1px -1px 0 0;
+			&, .mtg-label-content .mtg-label-subtitle {
+				@include mixins.flex-layout((flex-flow: column nowrap, justify-content: center));
+			}
+			.mtg-label-content {
+				@include mixins.gap($labels-spacing);
+				.mtg-label-title, .mtg-label-subtitle {
+					color: theme.$color-02;
+					min-width: 1px;
+				}
+				.mtg-label-title {
+					@include mixins.flex(0 0 auto);
+					white-space: nowrap;
+					text-align: right;
+					margin: 0;
+				}
+				.mtg-label-subtitle {
+					@include mixins.flex(0 1 auto);
+					text-align: left;
+					font-size: functions.em(10px, rem);
+					@include mixins.line-clamp(2);
+				}
+			}
+		}
+	}
+
+//// TOP LOADERS
+//// --------------------------------------------------------------------------
+
+	// Style block
+
+	.mtg-top-loaders {
+		.mtg-top-loader {
+			position: relative;
+			@include mixins.sizing(2.806in, 4in);
+			.image-wrapper {
+				height: 100%;
+			}
+			.mtg-top-loader-overlay {
+				@include mixins.position-fill;
+				@include mixins.flex-layout((flex-flow: column nowrap, justify-content: center));
+				text-align: center;
+				& > * {
+					margin: 0;
+				}
+				.mtg-top-loader-title, .mtg-top-loader-subtitle {
+					color: theme.$color-01;
+					-webkit-text-stroke: 3px theme.$color-02;
+					paint-order: stroke fill; /* Renders stroke underneath the fill */
+				}
+				.mtg-top-loader-subtitle {
+					margin: -#{theme.$spacing-x1} 0 0 0;
+				}
+			}
+		}
+	}
