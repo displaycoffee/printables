@@ -33,6 +33,10 @@
 		.page {
 			margin-bottom: 0;
 		}
+		.page-content {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact; /* Leave font colors as is: Standard (Firefox / Edge) */
+		}
 		.navigation {
 			display: none;
 		}

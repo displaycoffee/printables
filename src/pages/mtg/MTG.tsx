@@ -24,29 +24,41 @@ export const Labels = () => {
 			<Page>
 				<LabelsWrapper values={alphabet} />
 				<LabelsWrapper values={alphabet} />
+			</Page>
+
+			<Page>
+				<LabelsWrapper values={alphabet} />
 				<LabelsWrapper values={alphabet} />
 			</Page>
 
 			<Page>
 				<LabelsWrapper values={alphabet} />
 				<LabelsWrapper values={alphabet} />
-				<LabelsWrapper values={alphabet} />
 			</Page>
 
 			<Page>
 				<LabelsWrapper values={alphabet} />
 				<LabelsWrapper values={alphabet} />
+			</Page>
+
+			<Page>
 				<LabelsWrapper title={'Art Series'} values={artSeries} />
 				<LabelsWrapper values={misc} />
 			</Page>
 
 			<Page>
 				<LabelsWrapper title={'Forest'} values={forest} />
+			</Page>
+
+			<Page>
 				<LabelsWrapper title={'Island'} values={island} />
 			</Page>
 
 			<Page>
 				<LabelsWrapper title={'Mountain'} values={mountain} />
+			</Page>
+
+			<Page>
 				<LabelsWrapper title={'Plains'} values={plains} />
 			</Page>
 
@@ -126,8 +138,8 @@ export const TopLoadersRow = (props: TopLoadersRowProps) => {
 		<div className={`mtg-top-loader mtg-top-loader-${utils.handleize(value.title)}-${index} column`}>
 			<Image alt={value.title} hasLazy={false} image={value.image} wrapperClasses={['fit']} />
 			<div className="mtg-top-loader-overlay">
-				<h3 className="mtg-top-loader-title">{value.title}</h3>
-				{value?.subTitle ? <h5 className="mtg-top-loader-subtitle">{value.subTitle}</h5> : null}
+				<h2 className="mtg-top-loader-title h1">{value.title}</h2>
+				{value?.subTitle ? <h3 className="mtg-top-loader-subtitle h4">{value.subTitle}</h3> : null}
 			</div>
 		</div>
 	);

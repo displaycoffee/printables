@@ -12,9 +12,6 @@
 
 	// Style block
 
-	.page-mtg-labels .page {
-		padding: 0.25in;
-	}
 	.mtg-labels {
 		.mtg-label {
 			width: 2in;
@@ -26,12 +23,13 @@
 			}
 			.mtg-label-content {
 				@include mixins.gap($labels-spacing);
-				color: theme.$color-02;
 				.mtg-label-title, .mtg-label-subtitle {
+					color: theme.$color-02;
 					min-width: 1px;
 				}
 				.mtg-label-title {
 					@include mixins.flex(0 0 auto);
+					letter-spacing: 1px;
 					white-space: nowrap;
 					text-align: right;
 					margin: 0;
@@ -68,8 +66,11 @@
 				.mtg-top-loader-title, .mtg-top-loader-subtitle {
 					color: theme.$color-01;
 					-webkit-text-stroke: 3px theme.$color-02;
-					paint-order: stroke fill; /* renders stroke underneath the fill */
+					paint-order: stroke fill; /* Renders stroke underneath the fill */
 					letter-spacing: 1px;
+				}
+				.mtg-top-loader-subtitle {
+					margin: -#{theme.$spacing-x1} 0 0 0;
 				}
 			}
 		}
