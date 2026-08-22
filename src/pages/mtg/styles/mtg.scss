@@ -29,7 +29,6 @@
 				}
 				.mtg-label-title {
 					@include mixins.flex(0 0 auto);
-					letter-spacing: 1px;
 					white-space: nowrap;
 					text-align: right;
 					margin: 0;
@@ -67,7 +66,6 @@
 					color: theme.$color-01;
 					-webkit-text-stroke: 3px theme.$color-02;
 					paint-order: stroke fill; /* Renders stroke underneath the fill */
-					letter-spacing: 1px;
 				}
 				.mtg-top-loader-subtitle {
 					margin: -#{theme.$spacing-x1} 0 0 0;
