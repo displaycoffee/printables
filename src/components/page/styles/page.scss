@@ -1,0 +1,48 @@
+// Use utils and theme variables
+@use '../../../_config/styles/utils/_functions';
+@use '../../../_config/styles/utils/_mixins';
+@use '../../../_config/styles/theme/_theme';
+
+//// PAGE
+//// --------------------------------------------------------------------------
+
+	@page {
+		size: letter portrait; /* 8.5in x 11in */
+		margin: 0; /* zero out browser default margins */
+	}
+	.page {
+		@include mixins.sizing(8.5in, 11in);
+		margin: 0 auto theme.$spacing-x4 auto;
+		padding: 1in; /* your desired content safety margin */
+		background-color: theme.$color-01;
+		position: relative;
+		page-break-after: always; /* forces new page if you copy-paste this div */
+	}
+
+	/* Screen-only styling for an accurate preview look */
+	@media screen {
+		body {
+			padding: theme.$spacing-x4;
+		}
+		.page {
+			box-shadow: 0 0 theme.$spacing-x2 rgba(0, 0, 0, 0.1);
+			border: 1px solid theme.$color-06;
+		}
+	}
+	@media print {
+		.page {
+			margin-bottom: 0;
+		}
+		.navigation {
+			display: none;
+		}
+	}
+
+	/* Content spacing helper */
+	.page-content {
+		height: 100%;
+	}
+	.page-content-boundary {
+		border: 1px dashed theme.$color-07; /* optional: shows your printable boundary */
+		padding: theme.$spacing-x2;		
+	}

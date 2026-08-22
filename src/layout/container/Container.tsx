@@ -5,20 +5,21 @@ import './styles/container.scss';
 import { Link } from 'react-router-dom';
 
 /* Scripts */
-import { alphabet } from './scripts/alphabet';
+import { useBodyClass } from './scripts/container-hooks';
 
 /* Components */
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
-import { Labels } from '../../components/labels/Labels';
+import { Navigation, NavigationRoutes } from '../../components/navigation/Navigation';
 
 export const Container = () => {
+	// Set body class using custom hook
+	useBodyClass('labels');
+
 	return (
 		<ErrorBoundary message={<ContainerError />}>
-			<div className="page">
-				<div className="page-content">
-					<Labels label={'Art Series'} values={alphabet} />
-				</div>
-			</div>
+			<Navigation label={'Header Navigation'} />
+
+			<NavigationRoutes />
 		</ErrorBoundary>
 	);
 };

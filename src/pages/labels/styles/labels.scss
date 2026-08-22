@@ -12,12 +12,18 @@
 
 	// Style block
 
+	.page-labels .page {
+		padding: 0.25in;
+	}
 	.labels {
 		.label {
 			width: 2in;
 			padding: calc($labels-spacing / 2) $labels-spacing;
 			border: 1px solid theme.$color-07;
 			margin: -1px -1px 0 0;
+			&, .label-content .label-subtitle {
+				@include mixins.flex-layout((flex-flow: column nowrap, justify-content: center));
+			}
 			.label-content {
 				@include mixins.gap($labels-spacing);
 				color: theme.$color-02;
@@ -28,12 +34,10 @@
 					@include mixins.flex(0 0 auto);
 					white-space: nowrap;
 					text-align: right;
-					font-weight: theme.$font-weight-02;
+					margin: 0;
 				}
 				.label-subtitle {
-					@include mixins.flex-layout((flex-flow: column nowrap, justify-content: center));
 					@include mixins.flex(0 1 auto);
-					padding: calc(theme.$spacing-x1 / 2) 0 0 0;
 					text-align: left;
 					font-size: functions.em(10px, rem);
 					@include mixins.line-clamp(2);
