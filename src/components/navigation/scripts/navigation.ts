@@ -5,24 +5,33 @@ import { lazy } from 'react';
 import { NavigationType } from './navigation-types';
 
 /* Components */
-const Labels = lazy(() => import('../../../pages/labels/Labels').then((m) => ({ default: m.Labels })));
-const TopLoaders = lazy(() => import('../../../pages/top-loaders/TopLoaders').then((m) => ({ default: m.TopLoaders })));
+const Home = lazy(() => import('../../../pages/home/Home').then((m) => ({ default: m.Home })));
+const Labels = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.Labels })));
+const TopLoaders = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.TopLoaders })));
 
 export const navigation: NavigationType[] = [
 	{
 		id: 0,
-		element: Labels,
+		element: Home,
 		isRoute: true,
-		label: 'Labels',
+		label: 'Home',
 		showInNav: true,
 		url: '/',
 	},
 	{
 		id: 1,
+		element: Labels,
+		isRoute: true,
+		label: 'MTG Labels',
+		showInNav: true,
+		url: '/mtg-labels',
+	},
+	{
+		id: 2,
 		element: TopLoaders,
 		isRoute: true,
-		label: 'Top Loaders',
+		label: 'MTG Top Loaders',
 		showInNav: true,
-		url: '/',
+		url: '/mtg-top-loaders',
 	},
 ];

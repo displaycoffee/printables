@@ -8,4 +8,5 @@ export const artSeries: string[] = [
 	`Murders at Karlov Manor`,
 	`Secrets of Strixhaven`,
 	`Tarkir: Dragonstorm`,
+	`The Hobbit`,
 ];
