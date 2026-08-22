@@ -10,7 +10,7 @@ export const Page = (props: PageProps) => {
 
 	return (
 		<div className="page">
-			<div className={`page-content${showBoundary ? ' page-content-boundary' : ''}`}>{children}</div>
+			<div className={`page-content${showBoundary ? ' page-content-boundary' : ''} margin-trim`}>{children}</div>
 		</div>
 	);
 };
