@@ -4,6 +4,7 @@ import { createContext } from 'react';
 /* Scripts */
 import { ContextProps, ContextValuesType } from './scripts/context-types';
 import { theme } from '../_config/scripts/theme';
+import { utils } from '../_config/scripts/utils';
 import { variables } from '../_config/scripts/variables';
 
 /* Create context */
@@ -13,6 +14,7 @@ export const Context = createContext({} as ContextValuesType);
 export const ContextProvider = ({ children }: ContextProps) => {
 	const values: ContextValuesType = {
 		theme,
+		utils,
 		variables,
 	};
 
