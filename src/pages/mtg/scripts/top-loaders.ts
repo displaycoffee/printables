@@ -121,6 +121,21 @@ export const topLoaders: TopLoaderType[] = [
 		subTitle: '(Basic)',
 	},
 	{
+		image: `${path}${handleize(land)}-basic-04.jpg`,
+		title: land,
+		subTitle: '(Basic)',
+	},
+	{
+		image: `${path}${handleize(land)}-basic-05.jpg`,
+		title: land,
+		subTitle: '(Basic)',
+	},
+	{
+		image: `${path}${handleize(land)}-basic-06.jpg`,
+		title: land,
+		subTitle: '(Basic)',
+	},
+	{
 		image: `${path}${handleize(land)}-non-basic-01.jpg`,
 		title: land,
 		subTitle: '(Non-basic)',
