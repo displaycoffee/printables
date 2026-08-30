@@ -35,6 +35,7 @@ type Theme = {
 };
 
 type Utils = {
+	chunk: <T extends string | ObjectPrimitiveType>(array: T[], chunkSize: number) => T[][];
 	getLast: (value: string | string[], delimeter?: string) => string | number;
 	getPage: () => string;
 	handleize: (value: string) => string;

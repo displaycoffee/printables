@@ -6,7 +6,8 @@ import { NavigationType } from './navigation-types';
 
 /* Components */
 const Home = lazy(() => import('../../../pages/home/Home').then((m) => ({ default: m.Home })));
-const Labels = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.Labels })));
+const DividerLabels = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.DividerLabels })));
+const DrawerLabels = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.DrawerLabels })));
 const TopLoaders = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.TopLoaders })));
 
 export const navigation: NavigationType[] = [
@@ -20,14 +21,22 @@ export const navigation: NavigationType[] = [
 	},
 	{
 		id: 1,
-		element: Labels,
+		element: DividerLabels,
 		isRoute: true,
-		label: 'MTG Labels',
+		label: 'MTG Divider Labels',
 		showInNav: true,
-		url: '/mtg-labels',
+		url: '/mtg-divider-labels',
 	},
 	{
 		id: 2,
+		element: DrawerLabels,
+		isRoute: true,
+		label: 'MTG Drawer Labels',
+		showInNav: true,
+		url: '/mtg-drawer-labels',
+	},
+	{
+		id: 3,
 		element: TopLoaders,
 		isRoute: true,
 		label: 'MTG Top Loaders',

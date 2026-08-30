@@ -4,123 +4,77 @@ import './styles/mtg.scss';
 /* Scripts */
 import { LabelsProps, LabelsRowProps, TopLoadersProps, TopLoadersRowProps } from './scripts/mtg-types';
 import { useAppContext } from '../../context/scripts/context-hooks';
-import { alphabet } from './scripts/alphabet';
-import { forest } from './scripts/forest';
-import { island } from './scripts/island';
-import { mountain } from './scripts/mountain';
-import { plains } from './scripts/plains';
-import { swamp } from './scripts/swamp';
-import { artSeries } from './scripts/art-series';
-import { misc } from './scripts/misc';
+import { dividerLabels } from './scripts/divider-labels';
+import { drawerLabels } from './scripts/drawer-labels';
 import { topLoaders } from './scripts/top-loaders';
-import { drawers } from './scripts/drawers';
 
 /* Components */
 import { Page } from '../../components/page/Page';
 import { Image } from '../../components/image/Image';
 
-export const Labels = () => {
-	return (
-		<>
-			<Page>
-				<LabelsWrapper values={alphabet} />
-				<LabelsWrapper values={alphabet} />
-			</Page>
+export const DividerLabels = () => {
+	const { utils } = useAppContext();
+	const labels = utils.chunk(dividerLabels, 66);
 
-			<Page>
-				<LabelsWrapper values={alphabet} />
-				<LabelsWrapper values={alphabet} />
+	return labels.map((loader, index) => {
+		return (
+			<Page key={index}>
+				<LabelsWrapper values={loader} />
 			</Page>
+		);
+	});
+};
 
-			<Page>
-				<LabelsWrapper values={alphabet} />
-				<LabelsWrapper values={alphabet} />
-			</Page>
+export const DrawerLabels = () => {
+	const { utils } = useAppContext();
+	const labels = utils.chunk(drawerLabels, 66);
 
-			<Page>
-				<LabelsWrapper values={alphabet} />
-				<LabelsWrapper values={alphabet} />
+	return labels.map((loader, index) => {
+		return (
+			<Page key={index}>
+				<LabelsWrapper values={loader} />
 			</Page>
-
-			<Page>
-				<LabelsWrapper title={'Art Series'} values={artSeries} />
-				<LabelsWrapper values={misc} />
-			</Page>
-
-			<Page>
-				<LabelsWrapper title={'Forest'} values={forest} />
-			</Page>
-
-			<Page>
-				<LabelsWrapper title={'Island'} values={island} />
-			</Page>
-
-			<Page>
-				<LabelsWrapper title={'Mountain'} values={mountain} />
-			</Page>
-
-			<Page>
-				<LabelsWrapper title={'Plains'} values={plains} />
-			</Page>
-
-			<Page>
-				<LabelsWrapper title={'Swamp'} values={swamp} />
-			</Page>
-
-			<Page>
-				<LabelsWrapper values={drawers} />
-			</Page>
-		</>
-	);
+		);
+	});
 };
 
 export const LabelsWrapper = (props: LabelsProps) => {
-	const { title, values } = props;
+	const { values } = props;
 
 	return (
 		<div className="mtg-labels row row-auto row-wrap row-justify-content-center">
 			{values.map((value, index) => (
-				<LabelsRow index={index} title={title ?? ''} value={value} key={`${value}-${index}`} />
+				<LabelsRow index={index} value={value} key={`${value.title}-${index}`} />
 			))}
 		</div>
 	);
 };
 
 export const LabelsRow = (props: LabelsRowProps) => {
-	const { index, title, value } = props;
+	const { index, value } = props;
 	const { utils } = useAppContext();
 
 	return (
-		<div className={`mtg-label mtg-label-${utils.handleize(value)}-${index} column`}>
+		<div className={`mtg-label mtg-label-${utils.handleize(value.title)}-${index} column`}>
 			<div className="mtg-label-content row row-auto row-nowrap row-justify-content-center row-align-items-center">
-				<h6 className="mtg-label-title">{title ? title : value}</h6>
-				{title ? <span className="mtg-label-subtitle">{value}</span> : null}
+				<h6 className="mtg-label-title">{value.title}</h6>
+				{value.subTitle ? <span className="mtg-label-subtitle">{value.subTitle}</span> : null}
 			</div>
 		</div>
 	);
 };
 
 export const TopLoaders = () => {
-	const chunkSize = 4;
-	const loaders = [];
+	const { utils } = useAppContext();
+	const loaders = utils.chunk(topLoaders, 4);
 
-	// Create array of four sets of top loaders
-	for (let i = 0; i < topLoaders.length; i += chunkSize) {
-		const chunk = topLoaders.slice(i, i + chunkSize);
-		loaders.push(chunk);
-	}
-
-	return (
-		<>
-			{loaders.map((loader, index) => {
-				return (
-					<Page key={index}>
-						<TopLoadersWrapper values={loader} />
-					</Page>
-				);
-			})}
-		</>
-	);
+	return loaders.map((loader, index) => {
+		return (
+			<Page key={index}>
+				<TopLoadersWrapper values={loader} />
+			</Page>
+		);
+	});
 };
 
 export const TopLoadersWrapper = (props: TopLoadersProps) => {
@@ -129,7 +83,7 @@ export const TopLoadersWrapper = (props: TopLoadersProps) => {
 	return (
 		<div className="mtg-top-loaders row row-auto row-wrap row-spacing-20 row-justify-content-center">
 			{values.map((value, index) => (
-				<TopLoadersRow index={index} value={value} key={`${value}-${index}`} />
+				<TopLoadersRow index={index} value={value} key={`${value.title}-${index}`} />
 			))}
 		</div>
 	);

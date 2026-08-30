@@ -1,4 +1,15 @@
 export const utils: UtilsType = {
+	chunk: <T extends string | ObjectPrimitiveType>(array: T[], chunkSize: number) => {
+		const chunks: T[][] = [];
+
+		// Create chunks of arrays
+		for (let i = 0; i < array.length; i += chunkSize) {
+			const chunk = array.slice(i, i + chunkSize);
+			chunks.push(chunk);
+		}
+
+		return chunks;
+	},
 	getLast: (value: string | string[], delimeter?: string) => {
 		// Get last item in array
 		let valueArray: string[] | number[] = [];

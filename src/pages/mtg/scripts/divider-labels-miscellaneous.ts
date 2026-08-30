@@ -1,4 +1,4 @@
-export const misc: string[] = [
+export const miscellaneous: string[] = [
 	`Snow-covered Forest`,
 	`Snow-covered Island`,
 	`Snow-covered Mountain`,

@@ -1,17 +1,32 @@
 /* Type definitions */
-type Labels = {
+type Label = {
+	subTitle?: string;
+	title: string;
+};
+
+type LabelConfig = {
 	title?: string;
 	values: string[];
 };
 
+type Labels = {
+	values: Label[];
+};
+
 type LabelsRow = {
 	index: number;
-	title?: string;
-	value: string;
+	value: Label;
 };
 
 type TopLoader = {
 	image: string;
+	subTitle?: string;
+	title: string;
+};
+
+type TopLoaderConfig = {
+	files: string[];
+	path: string;
 	subTitle?: string;
 	title: string;
 };
@@ -26,7 +41,13 @@ type TopLoadersRow = {
 };
 
 /* Export types */
+export type LabelType = Label;
+
+export type LabelConfigType = LabelConfig;
+
 export type TopLoaderType = TopLoader;
+
+export type TopLoaderConfigType = TopLoaderConfig;
 
 /* Export prop types */
 export type LabelsProps = Labels;
