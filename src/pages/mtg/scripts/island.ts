@@ -9,7 +9,6 @@ export const island: string[] = [
 	`Elspeth vs. Kiora`,
 	`Duskmourn: House of Horror`,
 	`Edge of Eternities`,
-	`Edition`,
 	`Fifth Edition`,
 	`Final Fantasy`,
 	`Guilds of Ravnica`,

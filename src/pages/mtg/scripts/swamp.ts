@@ -34,7 +34,7 @@ export const swamp: string[] = [
 	`The Lord of the Rings: Tales of Middle-earth`,
 	`Theros`,
 	`Unfinity`,
-	`Unlimited Edition`,
+	`Unlimited`,
 	`Unstable`,
 	`Urza's Saga`,
 	`War of the Spark`,

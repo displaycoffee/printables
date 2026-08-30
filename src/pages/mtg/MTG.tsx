@@ -13,6 +13,7 @@ import { swamp } from './scripts/swamp';
 import { artSeries } from './scripts/art-series';
 import { misc } from './scripts/misc';
 import { topLoaders } from './scripts/top-loaders';
+import { drawers } from './scripts/drawers';
 
 /* Components */
 import { Page } from '../../components/page/Page';
@@ -64,6 +65,10 @@ export const Labels = () => {
 
 			<Page>
 				<LabelsWrapper title={'Swamp'} values={swamp} />
+			</Page>
+
+			<Page>
+				<LabelsWrapper values={drawers} />
 			</Page>
 		</>
 	);

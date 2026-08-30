@@ -1,5 +1,6 @@
 export const plains: string[] = [
 	`Anthologies`,
+	`Avacyn Restored`,
 	`Battle for Zendikar`,
 	`Commander 2013`,
 	`Elspeth vs. Kiora`,

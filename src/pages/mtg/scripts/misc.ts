@@ -9,4 +9,5 @@ export const misc: string[] = [
 	`Emblem`,
 	`Hero's Path`,
 	`Unfinity`,
+	`Wastes`,
 ];

@@ -10,7 +10,6 @@ export const forest: string[] = [
 	`Phyrexia vs. the Coalition`,
 	`Duskmourn: House of Horror`,
 	`Edge of Eternities`,
-	`Edition`,
 	`Fifth Edition`,
 	`Final Fantasy`,
 	`Fourth Edition`,
