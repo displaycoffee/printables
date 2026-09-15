@@ -1,5 +1,5 @@
 /* Scripts */
-import { LabelConfigType, LabelType } from './mtg-types';
+import type { LabelConfigType, LabelType } from './mtg-types';
 import { alphabet } from './divider-labels-alphabet';
 import { plains } from './divider-labels-plains';
 import { island } from './divider-labels-island';

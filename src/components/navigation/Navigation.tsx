@@ -6,7 +6,7 @@ import { Fragment, Suspense } from 'react';
 import { NavLink, Navigate, Route, Routes } from 'react-router-dom';
 
 /* Scripts */
-import { NavigationComponentProps, NavigationListItemProps, NavigationRoutesProps } from './scripts/navigation-types';
+import type { NavigationComponentProps, NavigationListItemProps, NavigationRoutesProps } from './scripts/navigation-types';
 import { navigationUtils } from './scripts/navigation-utils';
 import { navigationRoutes } from './scripts/navigation-routes';
 

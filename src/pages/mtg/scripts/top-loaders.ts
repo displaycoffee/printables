@@ -1,5 +1,5 @@
 /* Scripts */
-import { TopLoaderType, TopLoaderConfigType } from './mtg-types';
+import type { TopLoaderType, TopLoaderConfigType } from './mtg-types';
 
 /* Variables */
 const path = '/assets/images/mtg/top-loaders/';

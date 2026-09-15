@@ -2,7 +2,7 @@
 import './styles/mtg.scss';
 
 /* Scripts */
-import { LabelsProps, LabelsRowProps, TopLoadersProps, TopLoadersRowProps } from './scripts/mtg-types';
+import type { LabelsProps, LabelsRowProps, TopLoadersProps, TopLoadersRowProps } from './scripts/mtg-types';
 import { useAppContext } from '../../context/scripts/context-hooks';
 import { dividerLabels } from './scripts/divider-labels';
 import { drawerLabels } from './scripts/drawer-labels';

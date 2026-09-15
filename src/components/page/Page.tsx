@@ -2,7 +2,7 @@
 import './styles/page.scss';
 
 /* Scripts */
-import { PageProps } from './scripts/page-types';
+import type { PageProps } from './scripts/page-types';
 
 export const Page = (props: PageProps) => {
 	const { children } = props;

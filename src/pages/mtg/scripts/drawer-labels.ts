@@ -1,5 +1,5 @@
 /* Scripts */
-import { LabelConfigType, LabelType } from './mtg-types';
+import type { LabelConfigType, LabelType } from './mtg-types';
 import { drawerWhite } from './drawer-labels-white';
 import { drawerBlue } from './drawer-labels-blue';
 import { drawerBlack } from './drawer-labels-black';

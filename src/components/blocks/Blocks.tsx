@@ -2,7 +2,7 @@
 import './styles/blocks.scss';
 
 /* Scripts */
-import { ListProps } from './scripts/blocks-types';
+import type { ListProps } from './scripts/blocks-types';
 
 export const List = (props: ListProps) => {
 	const { children, className: propClassName, reversed, start, type: listType, variant = 'ul', ...rest } = props;
