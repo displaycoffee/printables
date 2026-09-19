@@ -22,7 +22,7 @@ export const Navigation = (props: NavigationComponentProps) => {
 
 	return navigationList.length != 0 ? (
 		<nav className="navigation" aria-label={label}>
-			<List className="navigation-list" variant="ul-unstyled">
+			<List className={'navigation-list'} variant={'ul-unstyled'}>
 				{navigationList.map((nav) => {
 					return (
 						<Fragment key={nav.id}>
@@ -73,7 +73,7 @@ export const NavigationRoutes = () => {
 					);
 				})}
 
-				<Route path="*" element={<Navigate to="/" />} />
+				<Route path={'*'} element={<Navigate to={'/'} />} />
 			</Routes>
 		</Suspense>
 	) : null;
