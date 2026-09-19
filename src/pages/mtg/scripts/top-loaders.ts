@@ -1,7 +1,6 @@
 /* Scripts */
 import type { TopLoaderType, TopLoaderConfigType } from './mtg-types';
 
-/* Variables */
 const path = '/assets/images/mtg/top-loaders/';
 const config: { [key: string]: TopLoaderConfigType } = {
 	white: {

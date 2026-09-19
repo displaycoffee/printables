@@ -9,7 +9,6 @@ import { forest } from './divider-labels-forest';
 import { artSeries } from './divider-labels-art-series';
 import { miscellaneous } from './divider-labels-miscellaneous';
 
-/* Variables */
 const config: { [key: string]: LabelConfigType } = {
 	abcWhite: {
 		values: alphabet,

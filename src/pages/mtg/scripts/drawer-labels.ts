@@ -10,7 +10,6 @@ import { drawerColorless } from './drawer-labels-colorless';
 import { drawerNonBasicLand } from './drawer-labels-non-basic-land';
 import { drawerBasicLand } from './drawer-labels-basic-land';
 
-/* Variables */
 const config: { [key: string]: LabelConfigType } = {
 	white: {
 		values: drawerWhite,
