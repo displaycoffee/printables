@@ -2,14 +2,15 @@
 import './styles/container.scss';
 
 /* Packages */
-import { Link } from 'react-router-dom';
+import { Link, Outlet, useLocation } from '@tanstack/react-router';
 
 /* Scripts */
 import { useBodyClass } from './scripts/container-hooks';
+import { navigationHeader } from '../../components/navigation/scripts/navigation';
 
 /* Components */
 import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
-import { Navigation, NavigationRoutes } from '../../components/navigation/Navigation';
+import { Navigation } from '../../components/navigation/Navigation';
 
 export const Container = () => {
 	// Set body class using custom hook
@@ -17,9 +18,9 @@ export const Container = () => {
 
 	return (
 		<ErrorBoundary message={<ContainerError />}>
-			<Navigation label={'Header Navigation'} />
+			<Navigation data={navigationHeader} label={'Header Navigation'} />
 
-			<NavigationRoutes />
+			<Outlet />
 		</ErrorBoundary>
 	);
 };
