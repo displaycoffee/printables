@@ -2,7 +2,7 @@
 import './styles/container.scss';
 
 /* Packages */
-import { Link, Outlet, useLocation } from '@tanstack/react-router';
+import { Link, Outlet } from '@tanstack/react-router';
 
 /* Scripts */
 import { useBodyClass } from './scripts/container-hooks';

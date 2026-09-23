@@ -6,16 +6,7 @@ const { create } = navigationUtils;
 
 export const navigationHeader: NavigationMapType = {
 	...create({ key: 'index', label: 'Home', url: '/' }),
-	...create({ key: 'page-one', label: 'Page One' }),
-	...create({
-		key: 'page-two',
-		label: 'Page Two',
-		includeInSiteMap: false,
-		children: {
-			...create({ key: 'child-page-one', label: 'Child Page One' }),
-			...create({ key: 'child-page-two', label: 'Child Page Two' }),
-		},
-	}),
-	...create({ key: 'page-three', label: 'Page Three' }),
-	...create({ key: 'page-four', label: 'Page Four' }),
+	...create({ key: 'mtg-divider-labels', label: 'MTG Divider Labels' }),
+	...create({ key: 'mtg-drawer-labels', label: 'MTG Drawer Labels' }),
+	...create({ key: 'mtg-top-loaders', label: 'MTG Top Loaders' }),
 };

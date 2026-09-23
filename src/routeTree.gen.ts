@@ -13,33 +13,81 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRouteImport } from './routes/__root'
 
 const IndexLazyRouteImport = createFileRoute('/')()
+const MtgDividerLabelsIndexLazyRouteImport = createFileRoute(
+  '/mtg-divider-labels/',
+)()
+const MtgDrawerLabelsIndexLazyRouteImport = createFileRoute(
+  '/mtg-drawer-labels/',
+)()
+const MtgTopLoadersIndexLazyRouteImport = createFileRoute('/mtg-top-loaders/')()
 
 const IndexLazyRoute = IndexLazyRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
+const MtgDividerLabelsIndexLazyRoute =
+  MtgDividerLabelsIndexLazyRouteImport.update({
+    id: '/mtg-divider-labels/',
+    path: '/mtg-divider-labels/',
+    getParentRoute: () => rootRouteImport,
+  } as any).lazy(() =>
+    import('./routes/mtg-divider-labels/index.lazy').then((d) => d.Route),
+  )
+const MtgDrawerLabelsIndexLazyRoute =
+  MtgDrawerLabelsIndexLazyRouteImport.update({
+    id: '/mtg-drawer-labels/',
+    path: '/mtg-drawer-labels/',
+    getParentRoute: () => rootRouteImport,
+  } as any).lazy(() =>
+    import('./routes/mtg-drawer-labels/index.lazy').then((d) => d.Route),
+  )
+const MtgTopLoadersIndexLazyRoute = MtgTopLoadersIndexLazyRouteImport.update({
+  id: '/mtg-top-loaders/',
+  path: '/mtg-top-loaders/',
+  getParentRoute: () => rootRouteImport,
+} as any).lazy(() =>
+  import('./routes/mtg-top-loaders/index.lazy').then((d) => d.Route),
+)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexLazyRoute
+  '/mtg-divider-labels/': typeof MtgDividerLabelsIndexLazyRoute
+  '/mtg-drawer-labels/': typeof MtgDrawerLabelsIndexLazyRoute
+  '/mtg-top-loaders/': typeof MtgTopLoadersIndexLazyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexLazyRoute
+  '/mtg-divider-labels': typeof MtgDividerLabelsIndexLazyRoute
+  '/mtg-drawer-labels': typeof MtgDrawerLabelsIndexLazyRoute
+  '/mtg-top-loaders': typeof MtgTopLoadersIndexLazyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexLazyRoute
+  '/mtg-divider-labels/': typeof MtgDividerLabelsIndexLazyRoute
+  '/mtg-drawer-labels/': typeof MtgDrawerLabelsIndexLazyRoute
+  '/mtg-top-loaders/': typeof MtgTopLoadersIndexLazyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    '/' | '/mtg-divider-labels/' | '/mtg-drawer-labels/' | '/mtg-top-loaders/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/mtg-divider-labels' | '/mtg-drawer-labels' | '/mtg-top-loaders'
+  id:
+    | '__root__'
+    | '/'
+    | '/mtg-divider-labels/'
+    | '/mtg-drawer-labels/'
+    | '/mtg-top-loaders/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexLazyRoute: typeof IndexLazyRoute
+  MtgDividerLabelsIndexLazyRoute: typeof MtgDividerLabelsIndexLazyRoute
+  MtgDrawerLabelsIndexLazyRoute: typeof MtgDrawerLabelsIndexLazyRoute
+  MtgTopLoadersIndexLazyRoute: typeof MtgTopLoadersIndexLazyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -51,11 +99,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mtg-divider-labels/': {
+      id: '/mtg-divider-labels/'
+      path: '/mtg-divider-labels'
+      fullPath: '/mtg-divider-labels/'
+      preLoaderRoute: typeof MtgDividerLabelsIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mtg-drawer-labels/': {
+      id: '/mtg-drawer-labels/'
+      path: '/mtg-drawer-labels'
+      fullPath: '/mtg-drawer-labels/'
+      preLoaderRoute: typeof MtgDrawerLabelsIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mtg-top-loaders/': {
+      id: '/mtg-top-loaders/'
+      path: '/mtg-top-loaders'
+      fullPath: '/mtg-top-loaders/'
+      preLoaderRoute: typeof MtgTopLoadersIndexLazyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexLazyRoute: IndexLazyRoute,
+  MtgDividerLabelsIndexLazyRoute: MtgDividerLabelsIndexLazyRoute,
+  MtgDrawerLabelsIndexLazyRoute: MtgDrawerLabelsIndexLazyRoute,
+  MtgTopLoadersIndexLazyRoute: MtgTopLoadersIndexLazyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

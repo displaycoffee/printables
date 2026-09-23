@@ -2,12 +2,12 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 
 /* Components */
-import { Page } from '../components/page/Page';
+import { DrawerLabels } from '../../components/mtg/MTG';
 
-export const Route = createLazyFileRoute('/')({
+export const Route = createLazyFileRoute('/mtg-drawer-labels/')({
 	component: RouteComponent,
 });
 
 function RouteComponent() {
-	return <Page>Nothing to see here.</Page>;
+	return <DrawerLabels />;
 }

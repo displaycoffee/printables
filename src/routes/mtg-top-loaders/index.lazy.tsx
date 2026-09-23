@@ -2,12 +2,12 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 
 /* Components */
-import { Page } from '../components/page/Page';
+import { TopLoaders } from '../../components/mtg/MTG';
 
-export const Route = createLazyFileRoute('/')({
+export const Route = createLazyFileRoute('/mtg-top-loaders/')({
 	component: RouteComponent,
 });
 
 function RouteComponent() {
-	return <Page>Nothing to see here.</Page>;
+	return <TopLoaders />;
 }
