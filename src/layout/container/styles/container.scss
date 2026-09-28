@@ -52,7 +52,6 @@
 		}
 	}
 	.main {
-		min-height: 50vh;
 		.main-layout {
 			@include mixins.gap($container-main-spacing);
 			.content, .sidebar {

@@ -16,7 +16,7 @@
 		.mtg-label {
 			width: 2in;
 			padding: calc($labels-spacing / 2) $labels-spacing;
-			border: 1px solid theme.$color-07;
+			border: 1px solid theme.$color-page-boundary;
 			margin: -1px -1px 0 0;
 			&, .mtg-label-content .mtg-label-subtitle {
 				@include mixins.flex-layout((flex-flow: column nowrap, justify-content: center));
@@ -24,7 +24,7 @@
 			.mtg-label-content {
 				@include mixins.gap($labels-spacing);
 				.mtg-label-title, .mtg-label-subtitle {
-					color: theme.$color-02;
+					color: theme.$color-black;
 					min-width: 1px;
 				}
 				.mtg-label-title {
@@ -63,8 +63,8 @@
 					margin: 0;
 				}
 				.mtg-top-loader-title, .mtg-top-loader-subtitle {
-					color: theme.$color-01;
-					-webkit-text-stroke: 3px theme.$color-02;
+					color: theme.$color-white;
+					-webkit-text-stroke: 3px theme.$color-black;
 					paint-order: stroke fill; /* Renders stroke underneath the fill */
 				}
 				.mtg-top-loader-subtitle {

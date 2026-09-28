@@ -116,7 +116,7 @@
 				}
 			}
 		}
-	}	
+	}
 
 //// HEADERS
 //// --------------------------------------------------------------------------
@@ -130,8 +130,8 @@
 			font-style: theme.$font-style-header,
 			text-transform: theme.$font-transform-header
 		));
-		color: theme.$color-header;
 		letter-spacing: 1px;
+		color: theme.$color-header;
 		a, .a {
 			color: inherit;
 			&:active, &:hover {
