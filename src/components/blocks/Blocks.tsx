@@ -2,7 +2,18 @@
 import './styles/blocks.scss';
 
 /* Scripts */
-import { ListProps } from './scripts/blocks-types';
+import type { LinkExternalProps, ListProps } from './scripts/blocks-types';
+
+export const LinkExternal = (props: LinkExternalProps) => {
+	const { children, className, href, ...rest } = props;
+
+	return (
+		<a className={className} href={href} target="_blank" rel="noreferrer" {...rest}>
+			{children}
+			<span className="sr-only"> (opens in a new tab)</span>
+		</a>
+	);
+};
 
 export const List = (props: ListProps) => {
 	const { children, className: propClassName, reversed, start, type: listType, variant = 'ul', ...rest } = props;
@@ -14,7 +25,7 @@ export const List = (props: ListProps) => {
 	const olAttributes = isOrdered ? { reversed, start, type: listType } : {};
 
 	return (
-		<Tag className={className} {...rest} {...olAttributes}>
+		<Tag className={className} role={'list'} {...rest} {...olAttributes}>
 			{children}
 		</Tag>
 	);

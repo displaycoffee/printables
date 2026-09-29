@@ -1,46 +1,12 @@
-/* Packages */
-import { lazy } from 'react';
-
 /* Scripts */
-import { NavigationType } from './navigation-types';
+import type { NavigationMapType } from './navigation-types';
+import { navigationUtils } from './navigation-utils';
 
-/* Components */
-const Home = lazy(() => import('../../../pages/home/Home').then((m) => ({ default: m.Home })));
-const DividerLabels = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.DividerLabels })));
-const DrawerLabels = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.DrawerLabels })));
-const TopLoaders = lazy(() => import('../../../pages/mtg/MTG').then((m) => ({ default: m.TopLoaders })));
+const { create } = navigationUtils;
 
-export const navigation: NavigationType[] = [
-	{
-		id: 0,
-		element: Home,
-		isRoute: true,
-		label: 'Home',
-		showInNav: true,
-		url: '/',
-	},
-	{
-		id: 1,
-		element: DividerLabels,
-		isRoute: true,
-		label: 'MTG Divider Labels',
-		showInNav: true,
-		url: '/mtg-divider-labels',
-	},
-	{
-		id: 2,
-		element: DrawerLabels,
-		isRoute: true,
-		label: 'MTG Drawer Labels',
-		showInNav: true,
-		url: '/mtg-drawer-labels',
-	},
-	{
-		id: 3,
-		element: TopLoaders,
-		isRoute: true,
-		label: 'MTG Top Loaders',
-		showInNav: true,
-		url: '/mtg-top-loaders',
-	},
-];
+export const navigationHeader: NavigationMapType = {
+	...create({ key: 'index', label: 'Home', url: '/' }),
+	...create({ key: 'mtg-divider-labels', label: 'MTG Divider Labels' }),
+	...create({ key: 'mtg-drawer-labels', label: 'MTG Drawer Labels' }),
+	...create({ key: 'mtg-top-loaders', label: 'MTG Top Loaders' }),
+};

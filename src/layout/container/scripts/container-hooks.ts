@@ -1,6 +1,6 @@
 /* Packages */
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from '@tanstack/react-router';
 
 /* Variables for useBodyClass */
 const bodyPrefix = 'page-';
@@ -18,7 +18,7 @@ export const useBodyClass = (defaultPrefix: string) => {
 
 		// Update previous location path
 		// Replace any body prefix, remove first slash, and replace any other slash with hyphen
-		previousPage = location.pathname.replace(bodyPrefix, '').replace('/', '').replace(/\//g, '-');
+		previousPage = location.pathname.replace(bodyPrefix, '').replace(/\/+$/, '').replace('/', '').replace(/\//g, '-');
 
 		// Add new body class
 		bodySelector.classList.add(`${bodyPrefix}${previousPage || defaultPrefix}`);

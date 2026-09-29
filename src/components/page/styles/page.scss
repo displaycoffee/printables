@@ -1,7 +1,7 @@
-// Use utils and theme variables
-@use '../../../_config/styles/utils/_functions';
-@use '../../../_config/styles/utils/_mixins';
-@use '../../../_config/styles/theme/_theme';
+// Local Sass modules
+@use '@displaycoffee/styles/functions';
+@use '@displaycoffee/styles/mixins';
+@use '../../../_core/styles/_theme';
 
 //// PAGE
 //// --------------------------------------------------------------------------
@@ -14,7 +14,7 @@
 		@include mixins.sizing(8.5in, 11in);
 		margin: 0 auto theme.$spacing-x4 auto;
 		padding: 1in; /* your desired content safety margin */
-		background-color: theme.$color-01;
+		background-color: theme.$color-white;
 		position: relative;
 		page-break-after: always; /* forces new page if you copy-paste this div */
 	}
@@ -26,7 +26,7 @@
 		}
 		.page {
 			box-shadow: 0 0 theme.$spacing-x2 rgba(0, 0, 0, 0.1);
-			border: 1px solid theme.$color-06;
+			border: 1px solid theme.$color-page-border;
 		}
 	}
 	@media print {
@@ -47,6 +47,6 @@
 		height: 100%;
 	}
 	.page-content-boundary {
-		border: 1px dashed theme.$color-07; /* optional: shows your printable boundary */
+		border: 1px dashed theme.$color-page-boundary; /* optional: shows your printable boundary */
 		padding: theme.$spacing-x2;		
 	}
