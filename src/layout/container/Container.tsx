@@ -5,7 +5,7 @@ import './styles/container.scss';
 import { Link, Outlet } from '@tanstack/react-router';
 
 /* Scripts */
-import { useBodyClass } from './scripts/container-hooks';
+import { useBodyClass } from '@displaycoffee/scripts/hooks-tanstack';
 import { navigationHeader } from '../../components/navigation/scripts/navigation';
 
 /* Components */
@@ -14,7 +14,7 @@ import { Navigation } from '../../components/navigation/Navigation';
 
 export const Container = () => {
 	// Set body class using custom hook
-	useBodyClass('labels');
+	useBodyClass('index');
 
 	return (
 		<ErrorBoundary message={<ContainerError />}>
