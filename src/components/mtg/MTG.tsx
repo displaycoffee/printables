@@ -3,14 +3,14 @@ import './styles/mtg.scss';
 
 /* Scripts */
 import type { LabelsProps, LabelsRowProps, TopLoadersProps, TopLoadersRowProps } from './scripts/mtg-types';
-import { useAppContext } from '../../context/scripts/context-hooks';
+import { useAppContext } from '@/context/scripts/context-hooks';
 import { dividerLabels } from './scripts/divider-labels';
 import { drawerLabels } from './scripts/drawer-labels';
 import { topLoaders } from './scripts/top-loaders';
 
 /* Components */
-import { Page } from '../../components/page/Page';
-import { Image } from '../../components/image/Image';
+import { Page } from '@/components/page/Page';
+import { Image } from '@/components/image/Image';
 
 export const DividerLabels = () => {
 	const { utils } = useAppContext();

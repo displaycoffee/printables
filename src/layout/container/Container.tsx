@@ -6,11 +6,11 @@ import { Link, Outlet } from '@tanstack/react-router';
 
 /* Scripts */
 import { useBodyClass } from '@displaycoffee/scripts/hooks-tanstack';
-import { navigationHeader } from '../../components/navigation/scripts/navigation';
+import { navigationHeader } from '@/components/navigation/scripts/navigation';
 
 /* Components */
-import { ErrorBoundary } from '../../components/error-boundary/ErrorBoundary';
-import { Navigation } from '../../components/navigation/Navigation';
+import { ErrorBoundary } from '@/components/error-boundary/ErrorBoundary';
+import { Navigation } from '@/components/navigation/Navigation';
 
 export const Container = () => {
 	// Set body class using custom hook
